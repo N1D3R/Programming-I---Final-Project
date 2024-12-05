@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "real-estate-toolkit"
+version = "0.1.0"
+description = "A toolkit for real estate data analysis"
+authors = ["Simon Sedlacek <simon.sedlacek02@estudiant.upf.edu>, Martí Blanes <marti.blanes01@estudiant.upf.edu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.1.3"
+polars = "^1.14.0"
+plotly = "^5.24.1"
+scikit-learn = "^1.5.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+flake8 = "^7.1.1"
+black = "^24.10.0"
+mypy = "^1.13.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
