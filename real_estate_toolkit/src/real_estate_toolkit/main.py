@@ -41,9 +41,7 @@ def install_poetry_instructions():
     print("Poetry is not installed on your system.")
     print("To install Poetry, follow these steps:")
     print("1. Visit https://python-poetry.org/docs/ to review the installation instructions.")
-    print("2. Alternatively, run this command:")
-    print("   curl -sSL https://install.python-poetry.org | python3 -")
-    print("3. After installation, ensure that Poetry is in your PATH.")
+    print("2. After installation, ensure that Poetry is in your PATH.")
 
 def main():
     if not is_poetry_installed():
