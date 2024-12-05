@@ -9,6 +9,8 @@ import plotly.graph_objects as go
 import time
 import sys
 import random
+import subprocess
+import sys
 
 from data.loader import DataLoader
 from data.cleaner import Cleaner
@@ -20,6 +22,36 @@ from agent_based_model.simulation import (
     Simulation, CleaningMarketMechanism, AnnualIncomeStatistics, ChildrenRange)
 from ml_models.predictor import HousePricePredictor
 from analytics.exploratory import MarketAnalyzer
+
+def is_poetry_installed():
+    """Check if Poetry is installed."""
+    try:
+        subprocess.run(["poetry", "--version"], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return True
+    except FileNotFoundError:
+        return False
+    except subprocess.CalledProcessError:
+        return False
+
+def install_poetry_instructions():
+    """Provide instructions to install Poetry."""
+    print("Poetry is not installed on your system.")
+    print("To install Poetry, follow these steps:")
+    print("1. Visit https://python-poetry.org/docs/ to review the installation instructions.")
+    print("2. Alternatively, run this command:")
+    print("   curl -sSL https://install.python-poetry.org | python3 -")
+    print("3. After installation, ensure that Poetry is in your PATH.")
+
+def main():
+    if not is_poetry_installed():
+        install_poetry_instructions()
+        sys.exit("Poetry is required to run this script. Please install it and try again.")
+    
+    print("Poetry is installed. Proceeding with the script...")
+    # Your main script logic here
+
+if __name__ == "__main__":
+    main()
 
 def display_ascii_art():
     art = [
