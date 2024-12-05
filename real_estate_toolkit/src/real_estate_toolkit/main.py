@@ -45,34 +45,21 @@ def install_poetry_instructions():
     print("   curl -sSL https://install.python-poetry.org | python3 -")
     print("3. After installation, ensure that Poetry is in your PATH.")
 
-def wait_for_user_confirmation():
-    """Wait for user confirmation to proceed."""
-    while True:
-        user_input = input("Do you want to proceed? (y/n): ").lower()
-        if user_input == 'y':
-            print("Continuing with the script...")
-            return True
-        elif user_input == 'n':
-            print("Exiting the program...")
-            sys.exit("User chose not to proceed.")
-        else:
-            print("Invalid input. Please enter 'y' or 'n'.")
-
 def main():
     if not is_poetry_installed():
         install_poetry_instructions()
         sys.exit("Poetry is required to run this script. Please install it and try again.")
     
     print("Poetry is installed. Proceeding with the script...")
-    
-    # Wait for user confirmation before continuing
-    wait_for_user_confirmation()
-    
+
     # Your main script logic here
     print("Main script logic executed.")
 
 if __name__ == "__main__":
     main()
+
+print("\nPress any key to continue...")
+input()
 
 def display_ascii_art():
     art = [
